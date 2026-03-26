@@ -1,18 +1,10 @@
 # n32g031-cmake-template
 A simple n32g031 cmake project template.
 
-## Setup project
-There are several ways to configure the toolchain:
-- Install `arm-none-eabi-gcc` to `/usr/arm-none-eabi-gcc`. Project can automatically find toolchain.
-- Pass in parameter `-DCMAKE_C_COMPILER=/path/to/bin/arm-none-eabi-gcc` to cmake.
-- Pass in parameter `-DTOOLCHAIN_PATH="/path/to/GNU Arm Embedded Toolchain"` to cmake.
-- Set toolchain directory to `TOOLCHAIN_PATH` environment variable.
-
-### For CLion
-1. Open [Settings - Build, Execution, Deployment - Toolchains](jetbrains://CLion/settings?name=Build%2C+Execution%2C+Deployment--Toolchains).
-2. Add a new toolchain. Set up `C Compiler` and `C++ Compiler`.
-3. Open [Settings - Build, Execution, Deployment - CMake](jetbrains://CLion/settings?name=Build%2C+Execution%2C+Deployment--CMake).
-4. Add a new profile. Choose the correct toolchain.
+## Required toolchain
+- Assumes `arm-none-eabi-gcc` installed in `/usr/bin`. Otherwise, change `CMAKE_C_COMPILER` and `CMAKE_CXX_COMPILER` in [CMakeLists.txt](CMakeLists.txt)
+- Uses [picolibc](https://keithp.com/picolibc/) as the standard library
+- Uses [pyOCD](https://pyocd.io/) for debugging. Install the required pack with `pyocd pack install N32G031`
 
 ## Custom ld or startup.s
 Set `TARGET_LD_SCRIPT` and `TARGET_STARTUP_ASM` as your own before `add_subdirectory(sdk)`  
