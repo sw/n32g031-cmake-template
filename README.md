@@ -10,5 +10,10 @@ A simple n32g031 cmake project template.
 Set `TARGET_LD_SCRIPT` and `TARGET_STARTUP_ASM` as your own before `add_subdirectory(sdk)`  
 See: [CMakeLists.txt](CMakeLists.txt)
 
+## Tests
+CTest is used for running unit tests in the host environment (i.e. not on the ARM bare-metal target). Use the `Test` Cmake preset:
+
+    cmake --workflow --preset Test
+
 ## License
 See [LICENSE](LICENSE)
