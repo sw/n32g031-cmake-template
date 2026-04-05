@@ -5,6 +5,8 @@ project(n32g031_template)
 enable_language(C)
 enable_language(CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Add project sources
 list(APPEND SOURCES
     ${CMAKE_SOURCE_DIR}/src/foo.c

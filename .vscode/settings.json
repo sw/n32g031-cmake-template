@@ -1,5 +1,7 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "clangd.arguments": [
+        "--compile-commands-dir=${command:cmake.buildDirectory}"
+    ],
     "cmake.options.advanced": {
         "configurePreset": {
             "statusBarVisibility": "visible"
@@ -7,5 +9,8 @@
     },
     "cmake.useCMakePresets": "always",
     "cortex-debug.gdbPath.linux": "gdb-multiarch",
-    "cortex-debug.objdumpPath.linux": "arm-none-eabi-objdump"
+    "cortex-debug.objdumpPath.linux": "arm-none-eabi-objdump",
+    "files.associations": {
+        "*.h": "c"
+    }
 }
